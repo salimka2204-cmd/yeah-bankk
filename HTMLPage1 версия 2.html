@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeah bank - ваш надежный партнер в мире финансов</title>
+    <link rel="stylesheet" href="StyleSheet1 версия 2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <! -- Шапка сайта -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-y logo-badge"></i>yeah bank
+        </div>
+
+        <!-- Кнопка «Три полоски» для мобильных устройств (гамбургер) -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <!-- Навигация -->
+        <nav class="nav-links">
+            <a href="#" onclick="showPage('home')" class="nav-link active">Главная</a>
+            <a href="#" onclick="showPage('cards')" class="nav-link">Карты</a>
+            <a href="#" onclick="showPage('credits')" class="nav-link">Кредиты</a>
+            <a href="#" onclick="showPage('deposits')" class="nav-link">Вклады</a>
+            <a href="#" onclick="showPage('transfers')" class="nav-link">Переводы</a>
+        </nav>
+
+        <button class="login-btn" onclick="showAlert('Окно авторизации')">
+            <i class="fa-regular fa-user"></i>Войти
+        </button>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Главный экран (Hero) -->
+        <div id="home" class="page active-page">
+            <section class="hero">
+                <div class="hero-content">
+                    <span class="badge">Больше, чем просто банк</span>
+                    <h1>yeah bank - ваш надежденный партнер в мире финансов</h1>
+                    <p>Откройте счета, оформляйте карты и управляйте своими финансами онлайн - просто, удобно и безопасно.</p>
+                    <div class="hero-content">
+                        <a href="#" class="btn-main" onclick="showAlert('Заявка на открытие счета принята!')">Открыть счет</a>
+                        <a href="#" class="btn-outline" onclick="showPage('cards')">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="bank-card">
+                    <div class="card-top">
+                        <span class="card-brand">yeah bank</span>
+                        <i class="fa-solid fa-wifi card-wifi"></i>
+                    </div>
+                    <div class="card-chip">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div class="card-number">6767 2204 2008 2026</div>
+                    <div class="card-details">
+                        <div class="expiry">12/28</div>
+                        <div class="holder">CARDHOLDER NAME</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- СЛАЙДЕР С БАННЕРАМИ КАК НА ТВОЕМ МАКЕТЕ -->
+            <section class="banner-slider-section">
+                <div class="banner-slider">
+
+                    <!-- 1. Ипотека на квартиру -->
+                    <div class="banner-slide active" style="background-image: linear-gradient(135deg, rgba(74, 0, 24, 0.8), rgba(30, 0, 10, 0.95)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="banner-content-box">
+                            <div class="banner-icon-badge"><i class="fa-solid fa-house"></i></div>
+                            <div class="banner-text">
+                                <h2>Ипотека на квартиру</h2>
+                                <p class="banner-sub">Ставка от 6%</p>
+                            </div>
+                        </div>
+                        <button class="banner-arrow-btn" onclick="showPage('credits')"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- 2. Авиабилеты -->
+                    <div class="banner-slide" style="background-image: linear-gradient(135deg, rgba(74, 0, 24, 0.8), rgba(30, 0, 10, 0.95)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="banner-content-box">
+                            <div class="banner-icon-badge"><i class="fa-solid fa-plane"></i></div>
+                            <div class="banner-text">
+                                <h2>Авиабилеты</h2>
+                                <p class="banner-sub">по выгодным ценам</p>
+                            </div>
+                        </div>
+                        <button class="banner-arrow-btn" onclick="showPage('cards')"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- 3. Автокредит -->
+                    <div class="banner-slide" style="background-image: linear-gradient(135deg, rgba(74, 0, 24, 0.8), rgba(30, 0, 10, 0.95)), url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="banner-content-box">
+                            <div class="banner-icon-badge"><i class="fa-solid fa-car"></i></div>
+                            <div class="banner-text">
+                                <h2>Автокредит</h2>
+                                <p class="banner-sub">на новых и подержанных авто</p>
+                            </div>
+                        </div>
+                        <button class="banner-arrow-btn" onclick="showPage('credits')"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- 4. Кредитная карта -->
+                    <div class="banner-slide" style="background-image: linear-gradient(135deg, rgba(74, 0, 24, 0.8), rgba(30, 0, 10, 0.95)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="banner-content-box">
+                            <div class="banner-icon-badge"><i class="fa-regular fa-credit-card"></i></div>
+                            <div class="banner-text">
+                                <h2>Кредитная карта</h2>
+                                <p class="banner-sub">Беспроцентный период до 55 дней</p>
+                            </div>
+                        </div>
+                        <button class="banner-arrow-btn" onclick="showPage('cards')"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- 5. Вклад -->
+                    <div class="banner-slide" style="background-image: linear-gradient(135deg, rgba(74, 0, 24, 0.8), rgba(30, 0, 10, 0.95)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="banner-content-box">
+                            <div class="banner-icon-badge"><i class="fa-solid fa-percent"></i></div>
+                            <div class="banner-text">
+                                <h2>Вклад</h2>
+                                <p class="banner-sub">с выгодной ставкой</p>
+                            </div>
+                        </div>
+                        <button class="banner-arrow-btn" onclick="showPage('deposits')"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Точки навигации слайдера -->
+                    <div class="slider-dots">
+                        <span class="s-dot active" onclick="setBannerSlide(0)"></span>
+                        <span class="s-dot" onclick="setBannerSlide(1)"></span>
+                        <span class="s-dot" onclick="setBannerSlide(2)"></span>
+                        <span class="s-dot" onclick="setBannerSlide(3)"></span>
+                        <span class="s-dot" onclick="setBannerSlide(4)"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. ТАБЛИЦА КУРСА ВАЛЮТ (ТОЧНАЯ КОПИЯ 1-ГО ФОТО) -->
+            <section class="currency-exact-section">
+                <div class="currency-header">
+                    <h2>Курсы валют в yeah bank</h2>
+                    <span class="update-time">Обновлено сегодня в 14:00</span>
+                </div>
+
+                <div class="currency-card-exact">
+                    <table class="currency-table-exact">
+                        <thead>
+                            <tr>
+                                <th>ВАЛЮТА</th>
+                                <th>ПОКУПКА</th>
+                                <th>ПРОДАЖА</th>
+                                <th>НБКР</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="curr-col">
+                                        <div class="curr-circle red-usd">$</div>
+                                        <div class="curr-text">
+                                            <span class="curr-code">USD</span>
+                                            <span class="curr-sub">Доллар США</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="val-bold">89.50 сом <span class="arrow-up">▲</span></td>
+                                <td class="val-white">90.20 сом</td>
+                                <td class="val-gray">89.85 сом</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="curr-col">
+                                        <div class="curr-circle red-eur">€</div>
+                                        <div class="curr-text">
+                                            <span class="curr-code">EUR</span>
+                                            <span class="curr-sub">Евро</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="val-bold">96.80 сом <span class="arrow-up">▲</span></td>
+                                <td class="val-white">97.90 сом</td>
+                                <td class="val-gray">97.10 сом</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="curr-col">
+                                        <div class="curr-circle red-rub">₽</div>
+                                        <div class="curr-text">
+                                            <span class="curr-code">RUB</span>
+                                            <span class="curr-sub">Российский рубль</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="val-bold">0.95 сом</td>
+                                <td class="val-white">0.99 сом</td>
+                                <td class="val-gray">0.97 сом</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Карточки услуг с якорями для ссылок-->
+            <section class="services">
+                <div class="service-card" onclick="showPage('cards')">
+                    <div class="service-icon"><i class="fa-regular fa-credit-card"></i></div>
+                    <h3>Карты</h3>
+                    <p>Дебетовые и кредитные карты с бесплатным обслуживанием.</p>
+                    <span class="card-link">Выбрать карту &rarr;</span>
+                </div>
+                <div class="service-card" onclick="showPage('credits')">
+                    <div class="service-icon"><i class="fa-solid fa-coins"></i></div>
+                    <h3>Кредиты</h3>
+                    <p>Потребительские кредиты наличными на любые цели.</p>
+                    <span class="card-link">Рассчитать кредит &rarr;</span>
+                </div>
+                <div class="service-card" onclick="showPage('deposits')">
+                    <div class="service-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h3>Вклады</h3>
+                    <p>Сберегательные счета с высокой доходностью.</p>
+                    <span class="card-link">Открыть вклад &rarr;</span>
+                </div>
+                <div class="service-card" onclick="showPage('transfers')">
+                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <h3>Переводы</h3>
+                    <p>Между своими счетами, на карту и международные переводы.</p>
+                    <span class="card-link">Сделать перевод &rarr;</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- 2. СТРАНИЦА "КАРТЫ" -->
+        <div id="cards-page" class="page">
+            <div class="content-box">
+                <h2>Наши банковские карты</h2>
+                <p>Выберите карту, которая подходит именно вам:</p>
+                <div class="sub-cards-grid">
+                    <div class="sub-card">
+                        <h3>Дебетовая карта</h3>
+                        <p>Кэшбэк до 10% на всё, бесплатное обслуживание.</p>
+                        <button class="btn-main" onclick="showAlert('Заявка на дебетовую карту подана!')">Оформить</button>
+                    </div>
+                    <div class="sub-card">
+                        <h3>Кредитная карта</h3>
+                        <p>До 120 дней без процентов и выгодные условия.</p>
+                        <button class="btn-main" onclick="showAlert('Заявка на кредитную карту подана!')">Оформить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3. СТРАНИЦА "КРЕДИТЫ" -->
+        <div id="credits-page" class="page">
+            <div class="content-box">
+                <h2>Кредиты наличными и онлайн</h2>
+                <p>Рассчитайте и получите кредит за 5 минут на карту любого банка.</p>
+                <div class="sub-cards-grid">
+                    <div class="sub-card">
+                        <h3>Потребительский кредит</h3>
+                        <p>Ставка от 14% годовых на любые ваши цели.</p>
+                        <button class="btn-main" onclick="showAlert('Заявка на кредит принята!')">Взять кредит</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. СТРАНИЦА "ВКЛАДЫ" -->
+        <div id="deposits-page" class="page">
+            <div class="content-box">
+                <h2>Вклады и сбережения</h2>
+                <p>Сохраните и приумножьте свои сбережения под высокий процент.</p>
+                <div class="sub-cards-grid">
+                    <div class="sub-card">
+                        <h3>Срочный вклад</h3>
+                        <p>До 20% годовых с выплатой процентов каждый месяц.</p>
+                        <button class="btn-main" onclick="showAlert('Вклад успешно открыт!')">Открыть вклад</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. СТРАНИЦА "ПЕРЕВОДЫ" -->
+        <div id="transfers-page" class="page">
+            <div class="content-box">
+                <h2>Быстрые переводы</h2>
+                <p>Отправляйте деньги родным и близким без комиссии.</p>
+                <div class="sub-cards-grid">
+                    <div class="sub-card">
+                        <h3>По номеру телефона</h3>
+                        <p>Мгновенные переводы в любые банки мира.</p>
+                        <button class="btn-main" onclick="showAlert('Перевод выполнен!')">Перевести</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- Подвал -->
+    <footer class="foother">
+        <div class="footer-content">
+            <div class="logo white">yeah bank</div>
+            <div class="footer-links">
+                <a href="#" onclick="showPage('home')">Главная</a>
+                <a href="#" onclick="showPage('cards')">Карты</a>
+                <a href="#" onclick="showPage('credits')">Кредиты</a>
+                <a href="#" onclick="showPage('deposits')">Вклады</a>
+                <a href="#" onclick="showPage('transfers')">Переводы</a>
+            </div>
+        </div>
+        <p class="footer-copy">
+            © 2026 Yeah Bank. Aвтор: Мелолю Салима  Группа: ИВТ-2-26
+            Kstu.kg.
+        </p>
+    </footer>
+
+    <!-- СКРИПТ В КОНЦЕ СТРАНИЦЫ -->
+    <script>
+                function showPage(pageId) {
+                    let pages = document.querySelectorAll('.page');
+                    pages.forEach(p => p.classList.remove('active-page'));
+                    let target = pageId === 'home' ? document.getElementById('home') : document.getElementById(pageId + '-page');
+                    if (target) target.classList.add('active-page');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                function toggleMenu() {
+                    document.getElementById('navLinks').classList.toggle('show');
+                }
+
+                function showAlert(msg) {
+                    alert("yeah bank: " + msg);
+                }
+
+                // Автолистание слайдера (каждые 4 секунды)
+                let bIndex = 0;
+                const bSlides = document.querySelectorAll('.banner-slide');
+                const bDots = document.querySelectorAll('.s-dot');
+
+                function updateBanners() {
+                    bSlides.forEach((s, i) => {
+                        s.classList.remove('active');
+                        if (bDots[i]) bDots[i].classList.remove('active');
+                    });
+                    bSlides[bIndex].classList.add('active');
+                    if (bDots[bIndex]) bDots[bIndex].classList.add('active');
+                }
+
+                function setBannerSlide(idx) {
+                    bIndex = idx;
+                    updateBanners();
+                }
+
+                setInterval(() => {
+                    bIndex = (bIndex + 1) % bSlides.length;
+                    updateBanners();
+                }, 4000);
+    </script>
+</body>
+</html>
